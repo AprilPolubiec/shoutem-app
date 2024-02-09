@@ -1,0 +1,59 @@
+{
+  "name": "i18n",
+  "title": "Language & Region",
+  "version": "4.1.1",
+  "platform": ">=13.0.2",
+  "releaseNotes": "* Option to translate categories.",
+  "description": "Configure the language and regional settings of your app.",
+  "dependencies": [
+    "shoutem.application"
+  ],
+  "icon": "server/assets/add-translation.png",
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "pages": [
+    {
+      "name": "LanguagePage",
+      "type": "react-page"
+    },
+    {
+      "name": "ScreensPage",
+      "type": "react-page"
+    },
+    {
+      "name": "CategoriesPage",
+      "type": "react-page"
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "@.LanguagePage",
+      "title": "Language"
+    },
+    {
+      "page": "@.ScreensPage",
+      "title": "Screens"
+    },
+    {
+      "page": "@.CategoriesPage",
+      "title": "Categories"
+    }
+  ],
+  "shortcuts": [
+    {
+      "title": "Languages",
+      "description": "Provide your users with means of direct interaction",
+      "name": "SelectLanguageScreen",
+      "screen": "@.SelectLanguageScreen",
+      "icon": "theme://languages.png"
+    }
+  ],
+  "screens": [
+    {
+      "name": "SelectLanguageScreen",
+      "title": "Select app language"
+    }
+  ]
+}

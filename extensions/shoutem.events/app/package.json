@@ -1,0 +1,17 @@
+{
+  "name": "shoutem.events",
+  "version": "5.2.0-build1666705814077",
+  "dependencies": {
+    "@shoutem/react-native-calendar-manager": "1.1.1",
+    "react-native-localize": "2.2.2"
+  },
+  "peerDependencies": {
+    "@shoutem/redux-io": "*",
+    "@shoutem/theme": "*",
+    "@shoutem/ui": "*"
+  },
+  "nativeDependencies": [
+    "@shoutem/react-native-calendar-manager",
+    "react-native-localize"
+  ]
+}

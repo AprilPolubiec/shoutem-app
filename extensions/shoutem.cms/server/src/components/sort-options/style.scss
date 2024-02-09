@@ -1,0 +1,28 @@
+.sort-options__field-selector {
+  min-width: 144px;
+  margin-right: 12px;
+
+  .divider {
+    margin: inherit;
+  }
+}
+
+.sort-options__field-menu {
+  max-height: 270px !important;
+  overflow-y: auto;
+}
+
+.sort-options__order-selector {
+  .btn {
+    min-width: 84px;
+  }
+
+  .divider {
+    margin: inherit;
+  }
+
+  li > a {
+    display: flex;
+    align-items: center;
+  }
+}

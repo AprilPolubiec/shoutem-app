@@ -1,0 +1,96 @@
+{
+  "name": "user-profile",
+  "title": "User Profile",
+  "version": "5.1.2",
+  "platform": ">=8",
+  "type": "system",
+  "description": "Add extended user profile",
+  "releaseNotes": "* Introduced styling through Customize style on the Builder",
+  "icon": "server/assets/add-user-profile-image.png",
+  "nativeChanges": {
+    "lastVersion": "4.2.1"
+  },
+  "dependencies": [
+    "shoutem.application",
+    "shoutem.auth",
+    "shoutem.i18n",
+    "shoutem.navigation",
+    "shoutem.redux"
+  ],
+  "categories": [
+    "users"
+  ],
+  "pages": [
+    {
+      "name": "UsersPage",
+      "type": "react-page"
+    },
+    {
+      "name": "ProfilePage",
+      "type": "react-page"
+    },
+    {
+      "name": "SettingsPage",
+      "type": "react-page"
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "@.UsersPage",
+      "title": "Users"
+    },
+    {
+      "page": "@.ProfilePage",
+      "title": "Profile"
+    },
+    {
+      "page": "@.SettingsPage",
+      "title": "Settings"
+    },
+    {
+      "page": "shoutem.theme.ExtensionThemeSettingsPage",
+      "title": "Settings",
+      "categories": [
+        "style"
+      ],
+      "parameters": {
+        "extensionTheme": "Theme"
+      }
+    }
+  ],
+  "extensionThemes": [
+    {
+      "name": "Theme",
+      "path": "server/themes/theme.json"
+    }
+  ],
+  "screens": [
+    {
+      "name": "SubmissionCompletedScreen"
+    },
+    {
+      "name": "EditProfileScreen"
+    },
+    {
+      "name": "MyProfileScreen",
+      "settings": {
+        "disableAdBanner": true
+      }
+    },
+    {
+      "name": "UserProfileScreen"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "MyProfileScreen",
+      "icon": "theme://profile.png",
+      "title": "My profile",
+      "description": "View and edit extended user profile",
+      "screen": "@.MyProfileScreen"
+    }
+  ],
+  "settings": {
+    "profileForm": "{ \"name\": { \"type\": \"string\", \"format\": \"string\", \"variant\": \"single-line\", \"title\": \"Name and surname\", \"displayPriority\": 0 }, \"image\": { \"type\": \"image\", \"format\": \"image\", \"variant\": \"circle\", \"title\": \"Profile image\", \"displayPriority\": 1 }, \"nick\": { \"type\": \"string\", \"format\": \"string\", \"variant\": \"single-line\", \"displayPriority\": 2, \"title\": \"Nick\", \"editable\": false }, \"location\": { \"type\": \"string\", \"format\": \"string\", \"variant\": \"single-line\", \"title\": \"Location\", \"displayPriority\": 3 }, \"description\": { \"type\": \"string\", \"format\": \"string\", \"variant\": \"multi-line\", \"title\": \"Bio\", \"displayPriority\": 4 }, \"url\": { \"type\": \"string\", \"format\": \"enum\", \"variant\": \"url\", \"title\": \"Website\", \"displayPriority\": 5 } }"
+  }
+}

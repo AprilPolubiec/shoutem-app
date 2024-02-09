@@ -1,0 +1,36 @@
+{
+  "name": "firebase",
+  "version": "5.0.1",
+  "platform": ">=13.0.0",
+  "type": "system",
+  "skipClone": false,
+  "title": "Firebase",
+  "nativeChanges": {
+    "lastVersion": "5.0.0"
+  },
+  "description": "Extension for configuring the integration with Firebase for sending push notifications, storage, ... ",
+  "releaseNotes": "* Added option to add service account key (.json) instead of server key (deprecated)",
+  "icon": "server/assets/add-firebase-image.png",
+  "dependencies": [
+    "shoutem.application",
+    "shoutem.navigation",
+    "shoutem.redux"
+  ],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "settingsPages": [
+    {
+      "page": "@.Settings",
+      "title": "Settings"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Settings",
+      "type": "native-component",
+      "path": "dummy.js"
+    }
+  ]
+}

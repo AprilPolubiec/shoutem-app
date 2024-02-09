@@ -1,0 +1,19 @@
+rootProject.name = 'ShoutemApp'
+//NativeModuleInjectionMark-gradle-settings
+include ':react-native-fbsdk-next'
+project(':react-native-fbsdk-next').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fbsdk-next/android')
+include ':react-native-maps'
+project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-maps/android')
+
+
+// packages above this line are added automatically when shoutem configure
+// is run - they should be discarded before pushing changes in this file
+
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+includeBuild('../node_modules/@react-native/gradle-plugin')
+
+//NativeModuleInjectionMark-gradle-settings-end
+
+include ':app', ':react-native-code-push'
+project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')

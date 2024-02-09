@@ -1,0 +1,107 @@
+{
+  "name": "rss-news",
+  "version": "5.2.1",
+  "platform": ">=12.1.0",
+  "title": "News RSS",
+  "description": "Show news articles from an RSS feed",
+  "releaseNotes": "No user facing changes\n* Support for more accurate analytics when opening item details screen.",
+  "icon": "server/assets/extension-icon.png",
+  "categories": ["content"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "dependencies": [
+    "shoutem.application",
+    "shoutem.firebase",
+    "shoutem.i18n",
+    "shoutem.layouts",
+    "shoutem.navigation",
+    "shoutem.rss"
+  ],
+  "shortcuts": [
+    {
+      "name": "news-shortcut",
+      "title": "News RSS",
+      "icon": "theme://news.png",
+      "screen": "@.ArticlesFeaturedGridScreen",
+      "capabilities": ["shoutem.rss.feed"],
+      "adminPages": [
+        {
+          "page": "shoutem.rss.RssPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "shoutem.proxy.news"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "News RSS",
+        "extensionTitle": "News RSS",
+        "feedType": "News"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "ArticlesFeaturedGridScreen",
+      "title": "Grid with a featured article",
+      "image": "./server/assets/screens/featuredgrid.png",
+      "groupTitle": "Choose List screen layout",
+      "navigatesTo": ["@.ArticleDetailsScreen"],
+      "settings": {
+        "listType": "fixed-grid",
+        "hasFeaturedItem": true
+      }
+    },
+    {
+      "name": "ArticlesGridScreen",
+      "title": "Grid",
+      "image": "./server/assets/screens/grid.png",
+      "groupTitle": "Choose List screen layout",
+      "extends": "@.ArticlesFeaturedGridScreen",
+      "settings": {
+        "listType": "fixed-grid",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "ArticlesListScreen",
+      "title": "List",
+      "image": "./server/assets/screens/list.png",
+      "extends": "@.ArticlesFeaturedGridScreen",
+      "settings": {
+        "listType": "list",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "ArticlesFeaturedListScreen",
+      "title": "List with a featured article",
+      "image": "./server/assets/screens/featuredlist.png",
+      "extends": "@.ArticlesFeaturedGridScreen",
+      "settings": {
+        "listType": "list",
+        "hasFeaturedItem": true
+      }
+    },
+    {
+      "name": "ArticleDetailsScreen",
+      "title": "Large photo details",
+      "groupTitle": "Choose Details screen layout",
+      "image": "./server/assets/screens/large-details.png",
+      "settings": { "disableAdBanner": true }
+    },
+    {
+      "name": "ArticleMediumDetailsScreen",
+      "title": "Regular details",
+      "image": "./server/assets/screens/medium-details.png",
+      "extends": "@.ArticleDetailsScreen",
+      "settings": { "disableAdBanner": true }
+    }
+  ]
+}

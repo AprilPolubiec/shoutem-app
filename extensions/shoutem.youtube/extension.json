@@ -1,0 +1,77 @@
+{
+  "name": "youtube",
+  "title": "YouTube",
+  "version": "5.1.1",
+  "platform": ">=6.0.1",
+  "description": "Show a video gallery from YouTube channel, user or playlist",
+  "releaseNotes": "* Addressed stability issue regarding deprecated AppState listener, no user facing changes",
+  "dependencies": [
+    "shoutem.application",
+    "shoutem.layouts",
+    "shoutem.navigation",
+    "shoutem.rss"
+  ],
+  "categories": ["media"],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "icon": "server/assets/add-videos-youtube-image.png",
+  "shortcuts": [
+    {
+      "title": "YouTube",
+      "name": "youtube-shortcut",
+      "icon": "theme://play.png",
+      "screen": "@.YoutubeVideosScreen",
+      "adminPages": [
+        {
+          "page": "@.YoutubeFeedPage",
+          "title": "Content"
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "YouTube",
+        "extensionTitle": "YouTube"
+      }
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "@.SettingsPage",
+      "title": "Settings"
+    }
+  ],
+  "pages": [
+    {
+      "name": "SettingsPage",
+      "path": "server/build/index.html?page=SettingsPage",
+      "type": "html"
+    },
+    {
+      "name": "YoutubeFeedPage",
+      "path": "server/build/index.html?page=YoutubeFeedPage",
+      "type": "html"
+    }
+  ],
+  "screens": [
+    {
+      "name": "YoutubeVideosScreen",
+      "title": "Big list",
+      "image": "server/assets/screens/big-list.png"
+    },
+    {
+      "name": "YoutubeSmallListScreen",
+      "title": "Small list",
+      "image": "server/assets/screens/small-list.png",
+      "extends": "@.YoutubeVideosScreen"
+    },
+    {
+      "name": "YoutubeVideoDetailsScreen",
+      "settings": { "disableAdBanner": true }
+    }
+  ]
+}

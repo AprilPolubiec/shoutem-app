@@ -1,0 +1,177 @@
+{
+  "name": "notification-center",
+  "title": "Notification center",
+  "version": "9.0.0",
+  "platform": ">=13.0.3",
+  "nativeChanges": {
+    "lastVersion": "7.1.1",
+    "settingsKeys": [
+      "chime"
+    ]
+  },
+  "description": "View and manage push notifications within the app",
+  "releaseNotes": "* Added 'admin' shortcut used to manage push notifications",
+  "icon": "./server/assets/images/add-notifications-settings-image.png",
+  "categories": [
+    "users"
+  ],
+  "dependencies": [
+    "shoutem.application",
+    "shoutem.firebase",
+    "shoutem.i18n",
+    "shoutem.permissions",
+    "shoutem.push-notification",
+    "shoutem.theme",
+    "shoutem.auth"
+  ],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "shortcuts": [
+    {
+      "title": "Notification center",
+      "description": "List of received notifications",
+      "name": "openNotificationsScreen",
+      "icon": "theme://activity.png",
+      "screen": "@.NotificationsScreen",
+      "settings": {
+        "defaultShortcutTitle": "Notification center",
+        "extensionTitle": "Notifications"
+      }
+    },
+    {
+      "title": "Group settings",
+      "description": "List of available push groups",
+      "name": "openPushGroupsScreen",
+      "icon": "theme://settings.png",
+      "screen": "@.PushGroupsScreen",
+      "settings": {
+        "defaultShortcutTitle": "Group settings",
+        "extensionTitle": "Notifications"
+      }
+    },
+    {
+      "title": "Notification settings",
+      "description": "Notification settings",
+      "name": "openNotificationSettingsScreen",
+      "icon": "theme://settings.png",
+      "screen": "@.NotificationSettingsScreen",
+      "settings": {
+        "defaultShortcutTitle": "Notification settings",
+        "extensionTitle": "Notifications"
+      }
+    },
+    {
+      "title": "Manage push notifications",
+      "description": "Create or edit push notifications for your users, from within the app. Access restricted to admins & moderators",
+      "name": "openPushNotificationsScreen",
+      "icon": "theme://bell.png",
+      "screen": "@.PushNotificationsScreen",
+      "settings": {
+        "defaultShortcutTitle": "Manage notifications",
+        "extensionTitle": "Notifications"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "NotificationsScreen"
+    },
+    {
+      "name": "PushGroupsScreen"
+    },
+    {
+      "name": "NotificationSettingsScreen"
+    },
+    {
+      "name": "NotificationDailySettingsScreen"
+    },
+    {
+      "name": "ReminderSettingsScreen"
+    },
+    {
+      "name": "NotificationDetailsScreen"
+    },
+    {
+      "name": "PushNotificationsScreen"
+    },
+    {
+      "name": "CreatePushNotificationScreen"
+    },
+    {
+      "name": "EditPushNotificationScreen"
+    },
+    {
+      "name": "ViewPushNotificationScreen"
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "@.NotificationsPage",
+      "title": "Notifications",
+      "categories": [
+        "push"
+      ]
+    },
+    {
+      "page": "@.GroupsPage",
+      "title": "Groups",
+      "categories": [
+        "push"
+      ]
+    },
+    {
+      "page": "@.GeneralPage",
+      "title": "General",
+      "categories": [
+        "push"
+      ]
+    },
+    {
+      "page": "@.JourneysPage",
+      "title": "Journeys",
+      "categories": [
+        "push"
+      ]
+    },
+    {
+      "page": "shoutem.theme.ExtensionThemeSettingsPage",
+      "title": "Settings",
+      "categories": [
+        "style"
+      ],
+      "parameters": {
+        "extensionTheme": "Theme"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "name": "NotificationsPage",
+      "type": "react-page"
+    },
+    {
+      "name": "GroupsPage",
+      "type": "react-page"
+    },
+    {
+      "name": "GeneralPage",
+      "type": "react-page"
+    },
+    {
+      "name": "JourneysPage",
+      "type": "react-page"
+    }
+  ],
+  "extensionThemes": [
+    {
+      "name": "Theme",
+      "path": "server/themes/theme.json"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "name": "web-view",
+  "version": "6.0.0",
+  "platform": ">=13",
+  "type": "system",
+  "title": "Web view",
+  "releaseNotes": "* Updated react-native-blob-util library, no user facing changes",
+  "description": "Show a web page in-app or in a browser",
+  "icon": "server/assets/add-web-page.png",
+  "nativeChanges": {
+    "latestVersion": "5.2.0"
+  },
+  "dependencies": [
+    "shoutem.cms",
+    "shoutem.i18n",
+    "shoutem.layouts",
+    "shoutem.navigation"
+  ],
+  "categories": [],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "shortcuts": [
+    {
+      "name": "web-view",
+      "title": "In-app",
+      "icon": "theme://web.png",
+      "screen": "@.WebViewScreen",
+      "adminPages": [
+        {
+          "page": "@.WebPage",
+          "title": "Content",
+          "parameters": {
+            "hasWebsiteSettings": "true"
+          },
+          "settings": {
+            "forwardAuthHeader": false,
+            "requireCookiesPermission": false,
+            "requireGeolocationPermission": false,
+            "showNavigationToolbar": false,
+            "url": ""
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "In-app",
+        "extensionTitle": "Web View"
+      }
+    },
+    {
+      "name": "web-view-external",
+      "title": "External",
+      "icon": "theme://web.png",
+      "action": "@.openUrlInExternalBrowser",
+      "adminPages": [
+        {
+          "page": "@.WebPage",
+          "title": "Content"
+        }
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "name": "WebViewScreen",
+      "title": "Web view",
+      "image": "./server/assets/screens/web-view-no-share.png"
+    },
+    {
+      "name": "WebViewWithShareScreen",
+      "title": "Web view with share button",
+      "image": "./server/assets/screens/web-view.png",
+      "extends": "@.WebViewScreen"
+    }
+  ],
+  "pages": [
+    {
+      "name": "WebPage",
+      "path": "dummy.js",
+      "type": "native-component"
+    }
+  ]
+}

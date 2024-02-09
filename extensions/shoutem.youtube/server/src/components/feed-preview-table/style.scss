@@ -1,0 +1,21 @@
+.feed-preview-table-item__img {
+  width: 85px;
+  height: 48px;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+.feed-preview-table-item__title-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feed-preview-table__title {
+  width: 85%;
+}
+
+.feed-preview-table__duration {
+  width: 15%;
+  text-align: end !important;
+}

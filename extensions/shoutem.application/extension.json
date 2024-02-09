@@ -1,0 +1,40 @@
+{
+  "name": "application",
+  "version": "6.1.2",
+  "platform": ">=13.0.3",
+  "type": "system",
+  "title": "Application",
+  "description": "System Shoutem extension that initializes and configures the application",
+  "releaseNotes": "* Added app modules fetching, no user facing changes",
+  "nativeChanges": {
+    "lastVersion": "4.1.4"
+  },
+  "icon": "server/assets/add-application-image.png",
+  "categories": [],
+  "dependencies": [
+    "shoutem.i18n",
+    "shoutem.navigation",
+    "shoutem.redux",
+    "shoutem.theme"
+  ],
+  "screens": [
+    {
+      "name": "SubscriptionMissingScreen"
+    }
+  ],
+  "pages": [
+    {
+      "name": "AppSettingsPage",
+      "type": "react-page"
+    }
+  ],
+  "settings": {
+    "imageResizingActive": true
+  },
+  "settingsPages": [
+    {
+      "page": "@.AppSettingsPage",
+      "title": "Settings"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "fonts",
+  "version": "2.0.1",
+  "platform": ">=13.0.0",
+  "title": "Fonts",
+  "description": "View and manage fonts for the app",
+  "releaseNotes": "* Removed requirement for Italic, Bold and Bold-Italic versions of custom fonts",
+  "icon": "server/assets/images/add-fonts-image.png",
+  "categories": [],
+  "nativeChanges": {
+    "lastVersion": "2.0.0",
+    "settingsKeys": ["excludedFonts"]
+  },
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "dependencies": ["shoutem.application"],
+  "pages": [
+    {
+      "name": "FontsPage",
+      "type": "react-page"
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "@.FontsPage",
+      "title": "Fonts",
+      "categories": ["style"]
+    }
+  ],
+  "settings": {
+    "excludedFonts": []
+  }
+}

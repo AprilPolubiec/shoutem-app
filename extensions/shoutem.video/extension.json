@@ -1,0 +1,146 @@
+{
+  "name": "video",
+  "title": "Videos",
+  "version": "7.2.1",
+  "platform": ">=12.1.0",
+  "description": "Show a video gallery",
+  "releaseNotes": "* Addressed stability issue regarding deprecated AppState listener, no user facing changes",
+  "icon": "server/assets/add-videos-image.png",
+  "dependencies": [
+    "shoutem.cms",
+    "shoutem.favorites",
+    "shoutem.i18n",
+    "shoutem.layouts",
+    "shoutem.navigation"
+  ],
+  "categories": ["media"],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "shortcuts": [
+    {
+      "name": "openVideosList",
+      "title": "Videos",
+      "icon": "theme://play.png",
+      "screen": "@.VideosList",
+      "capabilities": ["shoutem.cms.search", "shoutem.cms.import-csv"],
+      "adminPages": [
+        {
+          "page": "shoutem.cms.CmsPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "@.Videos"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "hasFavorites": true,
+        "defaultShortcutTitle": "Videos",
+        "extensionTitle": "Videos"
+      }
+    },
+    {
+      "name": "MyVideosShortcut",
+      "title": "My Videos",
+      "icon": "theme://play.png",
+      "description": "List of favorited videos.",
+      "screen": "@.MyVideosList",
+      "adminPages": [
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "favoritesSchemas": ["@.Videos"]
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "VideosCompactList",
+      "title": "Compact list",
+      "image": "server/assets/screens/compact-list.png",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "compact-list",
+        "hasFeaturedItem": false,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      },
+      "extends": "@.VideosList"
+    },
+    {
+      "name": "VideosList",
+      "title": "Tile list",
+      "image": "server/assets/screens/tile-list.png",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "tile-list",
+        "hasFeaturedItem": false,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      },
+      "navigatesTo": ["@.VideoDetails"]
+    },
+    {
+      "name": "VideoDetails",
+      "title": "Details",
+      "image": "server/assets/screens/details.png",
+      "settings": {
+        "shareable": true,
+        "disableAdBanner": true
+      }
+    },
+    {
+      "name": "VideoDetailsWithoutShare",
+      "title": "Details without share button",
+      "image": "server/assets/screens/details-without-share.png",
+      "extends": "@.VideoDetails",
+      "settings": {
+        "shareable": false,
+        "disableAdBanner": true
+      }
+    },
+    {
+      "name": "MyVideosList",
+      "title": "Tile favorites list",
+      "image": "server/assets/screens/tile-list.png",
+      "navigatesTo": ["@.VideoDetails"]
+    },
+    {
+      "name": "MyVideosCompactList",
+      "title": "Compact favorites list",
+      "image": "server/assets/screens/compact-list.png",
+      "extends": "@.MyVideosList",
+      "navigatesTo": ["@.VideoDetails"]
+    }
+  ],
+  "dataSchemas": [
+    {
+      "name": "Videos",
+      "path": "server/data-schemas/Videos.json"
+    }
+  ]
+}

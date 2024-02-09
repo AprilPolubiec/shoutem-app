@@ -1,0 +1,785 @@
+{
+  "title": "Rubicon Noir",
+  "formats": {
+    "font": {
+      "default": {
+        "fontFamily": "NotoSans",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "fontSize": 20,
+        "color": "#C6C6C6"
+      },
+      "constraints": {
+        "fontStyle": {
+          "enum": ["normal", "italic"]
+        },
+        "fontWeight": {
+          "enum": [
+            "normal",
+            "bold",
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+          ]
+        },
+        "fontSize": {
+          "minimum": 10,
+          "maximum": 48
+        }
+      }
+    },
+    "dropdown": {
+      "default": {
+        "dropdownValue": "light"
+      },
+      "constraints": {
+        "dropdownValue": {
+          "enum": ["light", "dark"]
+        }
+      }
+    }
+  },
+  "properties": {
+    "featuredColor": {
+      "type": "string",
+      "title": "Featured color - main color of the app",
+      "format": "color",
+      "default": "#111111"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "title": "Background color - overall app background color",
+      "format": "color",
+      "default": "#111111"
+    },
+    "paperColor": {
+      "type": "string",
+      "title": "Paper background color - most individual screen components and placeholders",
+      "format": "color",
+      "default": "#000000"
+    },
+    "shadowColor": {
+      "type": "string",
+      "title": "Shadow color",
+      "format": "color",
+      "default": "rgba(0, 0, 0, 0)"
+    },
+    "heading": {
+      "type": "object",
+      "title": "Heading",
+      "format": "font",
+      "default": {
+        "fontWeight": "700",
+        "fontSize": 25
+      },
+      "constraints": {
+        "fontSize": {
+          "minimum": 20,
+          "maximum": 40
+        }
+      }
+    },
+    "title": {
+      "type": "object",
+      "title": "Title",
+      "format": "font",
+      "default": {
+        "fontWeight": "700"
+      },
+      "constraints": {
+        "fontSize": {
+          "minimum": 15,
+          "maximum": 35
+        }
+      }
+    },
+    "subtitle": {
+      "type": "object",
+      "title": "Subtitle",
+      "format": "font",
+      "default": {
+        "fontSize": 15
+      },
+      "constraints": {
+        "fontSize": {
+          "maximum": 25
+        }
+      }
+    },
+    "caption": {
+      "type": "object",
+      "title": "Caption",
+      "format": "font",
+      "default": {
+        "fontSize": 13
+      },
+      "constraints": {
+        "fontSize": {
+          "minimum": 12,
+          "maximum": 25
+        }
+      }
+    },
+    "text": {
+      "type": "object",
+      "title": "Text",
+      "format": "font",
+      "default": {
+        "fontSize": 15
+      },
+      "constraints": {
+        "fontSize": {
+          "minimum": 12,
+          "maximum": 25
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "title": "Links",
+      "format": "font",
+      "default": {
+        "fontSize": 15
+      },
+      "constraints": {
+        "fontSize": {
+          "minimum": 12,
+          "maximum": 25
+        }
+      }
+    },
+    "tagOverlayColor": {
+      "type": "string",
+      "title": "Default overlay color",
+      "format": "color",
+      "default": "#000000"
+    },
+    "tagOverlayTextColor": {
+      "type": "string",
+      "title": "Text and Icon color on default overlays",
+      "format": "color",
+      "default": "#FFFFFF"
+    },
+    "imageOverlayColor": {
+      "type": "string",
+      "title": "Image overlay color",
+      "format": "color",
+      "default": "rgba(0, 0, 0, 0.2)"
+    },
+    "imageOverlayTextColor": {
+      "type": "string",
+      "title": "Text and Icon color on images with overlays",
+      "format": "color",
+      "default": "#FFFFFF"
+    },
+    "navBarBackground": {
+      "type": "string",
+      "title": "Background color",
+      "format": "color",
+      "default": "#171717"
+    },
+    "navBarBorderColor": {
+      "type": "string",
+      "title": "Header bottom border color",
+      "format": "color",
+      "default": "rgba(50, 50, 50, 0.2)"
+    },
+    "navBarText": {
+      "type": "object",
+      "title": "Title",
+      "format": "font",
+      "default": {
+        "fontSize": 15,
+        "color": "#ffffff"
+      }
+    },
+    "statusBarColor": {
+      "type": "string",
+      "title": "Notch status bar color (used when background image is present)",
+      "format": "color",
+      "default": "#000"
+    },
+    "statusBarStyle": {
+      "type": "object",
+      "title": "Status bar text (battery, time, carrier)",
+      "format": "dropdown",
+      "default": {
+        "dropdownValue": "light"
+      }
+    },
+    "navBarIconsColor": {
+      "type": "string",
+      "title": "Icons color",
+      "format": "color",
+      "default": "rgba(255, 255, 255, 0.5)"
+    },
+    "featuredNavBarTitleColor": {
+      "type": "string",
+      "title": "Title color for featured layouts",
+      "format": "color",
+      "default": "#ffffff"
+    },
+    "featuredNavBarIconsColor": {
+      "type": "string",
+      "title": "Icons color for featured layouts",
+      "format": "color",
+      "default": "rgba(255, 255, 255, 0.5)"
+    },
+    "mainNavBackground": {
+      "type": "string",
+      "title": "Background color",
+      "format": "color",
+      "default": "#171717"
+    },
+    "mainNavItemIconColor": {
+      "type": "string",
+      "title": "Item icon color",
+      "format": "color",
+      "default": "rgba(255, 255, 255, 0.4)"
+    },
+    "mainNavItemTextColor": {
+      "type": "string",
+      "title": "Item text color",
+      "format": "color",
+      "default": "rgba(255, 255, 255, 0.4)"
+    },
+    "drawerItemText": {
+      "type": "object",
+      "title": "Drawer items text",
+      "format": "font",
+      "default": {
+        "fontFamily": "Rubik-Regular",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "fontSize": 15,
+        "color": "rgba(255, 255, 255, 0.4)"
+      }
+    },
+    "tabbarItemText": {
+      "type": "object",
+      "title": "TabBar item text",
+      "format": "font",
+      "default": {
+        "fontFamily": "Rubik-Regular",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "fontSize": 10,
+        "color": "rgba(255, 255, 255, 0.4)"
+      }
+    },
+    "mainNavItemBackground": {
+      "type": "string",
+      "title": "Item background color",
+      "format": "color",
+      "default": "rgba(0, 0, 0, 0)"
+    },
+    "mainNavSelectedItemBackground": {
+      "type": "string",
+      "title": "Selected item background color",
+      "format": "color",
+      "default": "#171717"
+    },
+    "mainNavSelectedItemIconColor": {
+      "type": "string",
+      "title": "Selected item icon color",
+      "format": "color",
+      "default": "#ffffff"
+    },
+    "mainNavSelectedItemTextColor": {
+      "type": "string",
+      "title": "Selected item text color",
+      "format": "color",
+      "default": "#ffffff"
+    },
+    "mainNavSelectedItemBorderColor": {
+      "type": "string",
+      "title": "Tab Bar selected item border color",
+      "format": "color",
+      "default": "#363636"
+    },
+    "mainNavBorderColor": {
+      "type": "string",
+      "title": "Tab Bar border color",
+      "format": "color",
+      "default": "#111111"
+    },
+    "subNavItemColor": {
+      "type": "string",
+      "title": "Item text and icon color",
+      "format": "color",
+      "default": "#c6c6c6"
+    },
+    "subNavItemBackground": {
+      "type": "string",
+      "title": "Item background color",
+      "format": "color",
+      "default": "rgba(0, 0, 0, 0)"
+    },
+    "subNavListBorderColor": {
+      "type": "string",
+      "title": "List layout border color",
+      "format": "color",
+      "default": "#242424"
+    },
+    "primaryButtonText": {
+      "type": "object",
+      "title": "Primary text",
+      "format": "font",
+      "default": {
+        "fontWeight": "bold",
+        "fontSize": 12,
+        "color": "rgba(255, 255, 255, 0.6)"
+      }
+    },
+    "primaryButtonBackgroundColor": {
+      "type": "string",
+      "title": "Primary background color",
+      "format": "color",
+      "default": "#111111"
+    },
+    "primaryButtonBorderColor": {
+      "type": "string",
+      "title": "Primary button border color",
+      "format": "color",
+      "default": "#979797"
+    },
+    "secondaryButtonTextColor": {
+      "type": "string",
+      "title": "Secondary button text color",
+      "format": "color",
+      "default": "#111111"
+    },
+    "secondaryButtonBackgroundColor": {
+      "type": "string",
+      "title": "Secondary button background color",
+      "format": "color",
+      "default": "rgba(255, 255, 255, 0.6)"
+    },
+    "secondaryButtonBorderColor": {
+      "type": "string",
+      "title": "Secondary button border color",
+      "format": "color",
+      "default": "rgba(255, 255, 255, 0.6)"
+    },
+    "notificationTitleColor": {
+      "type": "string",
+      "title": "Notification title color",
+      "format": "color",
+      "default": "#C6C6C6"
+    },
+    "notificationMessageColor": {
+      "type": "string",
+      "title": "Notification message color",
+      "format": "color",
+      "default": "#C6C6C6"
+    },
+    "notificationTimestampColor": {
+      "type": "string",
+      "title": "Notification timestamp color",
+      "format": "color",
+      "default": "#666666"
+    },
+    "errorText": {
+      "type": "object",
+      "title": "Error text",
+      "format": "font",
+      "default": {
+        "fontSize": 12,
+        "color": "#FF0000"
+      },
+      "constraints": {
+        "fontSize": {
+          "minimum": 12,
+          "maximum": 25
+        }
+      }
+    },
+    "lineColor": {
+      "type": "string",
+      "title": "Line color - between list items",
+      "format": "color",
+      "default": "#242424"
+    },
+    "indicatorColor": {
+      "type": "string",
+      "title": "Notification dots and page indicators",
+      "format": "color",
+      "default": "#767676"
+    },
+    "sectionHeaderBackgroundColor": {
+      "type": "string",
+      "title": "Section header background color - details screens",
+      "format": "color",
+      "default": "#181818"
+    },
+    "gridItemBackgroundColor": {
+      "type": "string",
+      "title": "Places grid layout item - background color",
+      "format": "color",
+      "default": "#FFFFFF"
+    },
+    "newsGrid122ItemBackgroundColor": {
+      "type": "string",
+      "title": "News grid 1-2-2 layout item - background color",
+      "format": "color",
+      "default": "#FFFFFF"
+    },
+    "categoryDropdownBackgroundColor": {
+      "type": "string",
+      "title": "Category dropdown background color",
+      "format": "color",
+      "default": "#171717"
+    },
+    "categoryDropdownTextColor": {
+      "type": "string",
+      "title": "Category dropdown text color",
+      "format": "color",
+      "default": "rgba(255, 255, 255, 0.5)"
+    },
+    "searchInputBackgroundColor": {
+      "type": "string",
+      "title": "Search input background color",
+      "format": "color",
+      "default": "#F0F0F0"
+    },
+    "searchTextColor": {
+      "type": "string",
+      "title": "Search input text,placeholder,icons & selection color",
+      "format": "color",
+      "default": "#666666"
+    },
+    "onboardingTitleTextColor": {
+      "type": "string",
+      "title": "Onboarding title text color",
+      "format": "color",
+      "default": "#FFFFFF"
+    },
+    "onboardingDescriptionTextColor": {
+      "type": "string",
+      "title": "Onboarding description text color",
+      "format": "color",
+      "default": "#FFFFFF"
+    },
+    "screenBackgroundColor": {
+      "type": "string",
+      "title": "Screen background color",
+      "format": "color",
+      "default": "#111111"
+    },
+    "screenOverlayColor": {
+      "type": "string",
+      "title": "Screen overlay color",
+      "format": "color",
+      "default": "rgba(0,0,0,0.5)"
+    },
+    "streamTitleColor": {
+      "type": "string",
+      "title": "Stream title color",
+      "format": "color",
+      "default": "#bbbbbb"
+    },
+    "artistTitleColor": {
+      "type": "string",
+      "title": "Artist title color",
+      "format": "color",
+      "default": "#bbbbbb"
+    },
+    "artworkCircularImageBorderColor": {
+      "type": "string",
+      "title": "Artwork circular image border color",
+      "format": "color",
+      "default": "#a6a6a6"
+    },
+    "songNameTitleColor": {
+      "type": "string",
+      "title": "Song name title color",
+      "format": "color",
+      "default": "#a6a6a6"
+    },
+    "shareButtonColor": {
+      "type": "string",
+      "title": "Share button color",
+      "format": "color",
+      "default": "#bbbbbb"
+    },
+    "playbackButtonBorderColor": {
+      "type": "string",
+      "title": "Playback button border color",
+      "format": "color",
+      "default": "#a6a6a6"
+    },
+    "playbackIconColor": {
+      "type": "string",
+      "title": "Playback icon color",
+      "format": "color",
+      "default": "#a6a6a6"
+    },
+    "playbackAnimatedCircleColor": {
+      "type": "string",
+      "title": "Playback animated circle color",
+      "format": "color",
+      "default": "#a6a6a6"
+    },
+    "likeButtonFillColor": {
+      "type": "string",
+      "title": "Color of like button when status is liked",
+      "format": "color",
+      "default": "rgba(200, 0, 0, 0.8)"
+    },
+    "toastBackgroundColor": {
+      "type": "string",
+      "title": "Background color",
+      "format": "color",
+      "default": "#FFFFFF"
+    },
+    "toastSuccessBackgroundColor": {
+      "type": "string",
+      "title": "Success toast",
+      "format": "color",
+      "default": "#333D27"
+    },
+    "toastErrorBackgroundColor": {
+      "type": "string",
+      "title": "Error toast",
+      "format": "color",
+      "default": "#3D272A"
+    },
+    "toastTitleColor": {
+      "type": "string",
+      "title": "Title color",
+      "format": "color",
+      "default": "#888FA1"
+    },
+    "toastSuccessTitleColor": {
+      "type": "string",
+      "title": "Success toast",
+      "format": "color",
+      "default": "#B4BDAA"
+    },
+    "toastErrorTitleColor": {
+      "type": "string",
+      "title": "Error toast",
+      "format": "color",
+      "default": "#B4BDAA"
+    },
+    "toastMessageColor": {
+      "type": "string",
+      "title": "Message color",
+      "format": "color",
+      "default": "#444F6C"
+    },
+    "toastSuccessMessageColor": {
+      "type": "string",
+      "title": "Success toast",
+      "format": "color",
+      "default": "#FFFFFF"
+    },
+    "toastErrorMessageColor": {
+      "type": "string",
+      "title": "Error toast",
+      "format": "color",
+      "default": "#FFFFFF"
+    },
+    "toastConfirmButtonBackgroundColor": {
+      "type": "string",
+      "title": "Confirm button background color",
+      "format": "color",
+      "default": "#444F6C"
+    },
+    "toastConfirmButtonTextColor": {
+      "type": "string",
+      "title": "Confirm button text color",
+      "format": "color",
+      "default": "#FFFFFF"
+    },
+    "toastCancelButtonBackgroundColor": {
+      "type": "string",
+      "title": "Cancel button background color",
+      "format": "color",
+      "default": "#F3F4F6"
+    },
+    "toastCancelButtonTextColor": {
+      "type": "string",
+      "title": "Cancel button text color",
+      "format": "color",
+      "default": "#444F6C"
+    },
+    "toastProgressBarBackgroundColor": {
+      "type": "string",
+      "title": "Progress bar background color",
+      "format": "color",
+      "default": "rgba(136, 143, 161, 0.1)"
+    },
+    "toastProgressBarColor": {
+      "type": "string",
+      "title": "Progress bar main color",
+      "format": "color",
+      "default": "#00AADF"
+    },
+    "toastSuccessProgressBarColor": {
+      "type": "string",
+      "title": "Success toast",
+      "format": "color",
+      "default": "#88C242"
+    },
+    "toastErrorProgressBarColor": {
+      "type": "string",
+      "title": "Error toast",
+      "format": "color",
+      "default": "#D0021B"
+    }
+  },
+  "layout": {
+    "sections": [
+      {
+        "title": "Basic colors",
+        "properties": [
+          "featuredColor",
+          "backgroundColor",
+          "paperColor",
+          "shadowColor"
+        ]
+      },
+      {
+        "title": "Typography",
+        "properties": [
+          "heading",
+          "title",
+          "subtitle",
+          "caption",
+          "text",
+          "links",
+          "errorText"
+        ]
+      },
+      {
+        "title": "Buttons",
+        "properties": [
+          "primaryButtonText",
+          "primaryButtonBackgroundColor",
+          "primaryButtonBorderColor",
+          "secondaryButtonTextColor",
+          "secondaryButtonBackgroundColor",
+          "secondaryButtonBorderColor"
+        ]
+      },
+      {
+        "title": "Overlays",
+        "properties": [
+          "tagOverlayColor",
+          "tagOverlayTextColor",
+          "imageOverlayColor",
+          "imageOverlayTextColor"
+        ]
+      },
+      {
+        "title": "Miscellaneous",
+        "properties": [
+          "lineColor",
+          "indicatorColor",
+          "sectionHeaderBackgroundColor",
+          "categoryDropdownBackgroundColor",
+          "categoryDropdownTextColor",
+          "searchInputBackgroundColor",
+          "searchTextColor"
+        ]
+      },
+      {
+        "title": "Toast messages",
+        "properties": [
+          {
+            "name": "toastBackgroundColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastSuccessBackgroundColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastErrorBackgroundColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastTitleColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastSuccessTitleColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastErrorTitleColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastMessageColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastSuccessMessageColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastErrorMessageColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastConfirmButtonBackgroundColor",
+            "inline": true,
+            "size": 6
+          },
+          {
+            "name": "toastConfirmButtonTextColor",
+            "inline": true,
+            "size": 6
+          },
+          {
+            "name": "toastCancelButtonBackgroundColor",
+            "inline": true,
+            "size": 6
+          },
+          {
+            "name": "toastCancelButtonTextColor",
+            "inline": true,
+            "size": 6
+          },
+          {
+            "name": "toastProgressBarBackgroundColor",
+            "inline": false,
+            "size": 12
+          },
+          {
+            "name": "toastProgressBarColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastSuccessProgressBarColor",
+            "inline": true,
+            "size": 4
+          },
+          {
+            "name": "toastErrorProgressBarColor",
+            "inline": true,
+            "size": 4
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "shoutem.vimeo",
+  "version": "5.2.1-build1693585113155",
+  "description": "Vimeo videos",
+  "peerDependencies": {
+    "@shoutem/redux-io": "*",
+    "@shoutem/theme": "*",
+    "@shoutem/ui": "*"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "name": "social",
+  "title": "Social",
+  "version": "12.0.2",
+  "platform": ">=13",
+  "nativeChanges": {
+    "lastVersion": "10.0.0",
+    "settingsKeys": []
+  },
+  "skipClone": false,
+  "releaseNotes": "* Fixed the issue where opening own user profile screen wouldn't show profile action buttons\n* Removed user avatar from social wall, if user is not logged in",
+  "description": "Let members create posts, comment and like them",
+  "categories": [
+    "users"
+  ],
+  "capabilities": [
+    "shoutem.social.giphy-api-ios",
+    "shoutem.social.giphy-api-android"
+  ],
+  "dependencies": [
+    "shoutem.application",
+    "shoutem.auth",
+    "shoutem.firebase",
+    "shoutem.i18n",
+    "shoutem.layouts",
+    "shoutem.navigation",
+    "shoutem.permissions",
+    "shoutem.user-profile",
+    "shoutem.theme",
+    "shoutem.redux"
+  ],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "icon": "server/assets/add-community-image.png",
+  "screens": [
+    {
+      "name": "SocialWallScreen"
+    },
+    {
+      "name": "StatusDetailsScreen",
+      "settings": {
+        "disableAdBanner": true
+      }
+    },
+    {
+      "name": "CreateStatusScreen",
+      "settings": {
+        "disableAdBanner": true
+      }
+    },
+    {
+      "name": "MembersScreen"
+    },
+    {
+      "name": "SearchScreen"
+    },
+    {
+      "name": "NotificationSettingsScreen"
+    },
+    {
+      "name": "BlockedUsers"
+    }
+  ],
+  "shortcuts": [
+    {
+      "title": "Wall",
+      "name": "wall",
+      "screen": "@.SocialWallScreen",
+      "icon": "theme://feed-wall.png",
+      "adminPages": [
+        {
+          "page": "@.ShortcutInfoPage",
+          "title": "Info"
+        }
+      ]
+    },
+    {
+      "title": "Members",
+      "name": "members",
+      "screen": "@.MembersScreen",
+      "icon": "theme://members.png",
+      "adminPages": [
+        {
+          "page": "@.UserGroupsVisibilityPage",
+          "title": "User Groups Filtering"
+        },
+        {
+          "page": "@.ShortcutInfoPage",
+          "title": "Info"
+        }
+      ],
+      "settings": {
+        "showAllUsers": true
+      }
+    },
+    {
+      "name": "BlockedUsers",
+      "title": "Blocked users",
+      "screen": "@.BlockedUsers",
+      "icon": "theme://members.png"
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "@.SocialSettingsPage",
+      "title": "Settings"
+    },
+    {
+      "page": "shoutem.theme.ExtensionThemeSettingsPage",
+      "title": "Settings",
+      "categories": [
+        "style"
+      ],
+      "parameters": {
+        "extensionTheme": "Theme"
+      }
+    }
+  ],
+  "extensionThemes": [
+    {
+      "name": "Theme",
+      "path": "server/themes/theme.json"
+    }
+  ],
+  "pages": [
+    {
+      "name": "SocialSettingsPage",
+      "path": "server/build/index.html?page=SocialSettingsPage",
+      "type": "html"
+    },
+    {
+      "name": "ShortcutInfoPage",
+      "path": "server/build/index.html?page=ShortcutInfoPage",
+      "type": "html"
+    },
+    {
+      "name": "UserGroupsVisibilityPage",
+      "type": "react-page"
+    }
+  ],
+  "settings": {
+    "maxStatusLength": 140,
+    "enablePhotoAttachments": true,
+    "enableGifAttachments": true,
+    "enableComments": true,
+    "enableInteractions": true
+  },
+  "cloud": [
+    {
+      "type": "api",
+      "script": "npm run migrate:docker && npm run start:server:docker"
+    }
+  ]
+}

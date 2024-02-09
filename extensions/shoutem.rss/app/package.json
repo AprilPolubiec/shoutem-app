@@ -1,0 +1,10 @@
+{
+  "name": "shoutem.rss",
+  "version": "5.0.2-build1696852975992",
+  "description": "Shoutem RSS extension",
+  "peerDependencies": {
+    "@shoutem/redux-composers": "*",
+    "@shoutem/redux-io": "*",
+    "@shoutem/ui": "*"
+  }
+}

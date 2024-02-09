@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ShoutemApp</string>
+
+    <!-- NativeModuleInjectionMark-android-res-values-strings -->
+    
+<string moduleConfig="true" name="CodePushDeploymentKey">ImWEX3C5l0r1PLXGLlM3VtfB15dfVyQ9naUsl</string>
+
+<string name="facebook_app_id">112233</string>
+<string name="fb_login_protocol_scheme">fb112233</string>
+<string name="facebook_client_token">445566</string>
+</resources>

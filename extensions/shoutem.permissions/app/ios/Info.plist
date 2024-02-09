@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>NSCameraUsageDescription</key>
+    <string>This app needs access to your camera to take your profile image, scan the QR codes, scan loyalty QR codes, take pictures and post them to social wall</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs access to your photo library to select profile image from gallery, allow screenshots of preview app, select images to include in your social posts, select images to include in your social posts</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs access to your location to display location relevant CMS content</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app needs access to your location to display location relevant CMS content</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This app needs access to your location to display location relevant CMS content</string>
+  </dict>
+</plist>

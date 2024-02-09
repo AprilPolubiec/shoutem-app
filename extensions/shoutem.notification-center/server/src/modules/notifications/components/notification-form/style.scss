@@ -1,0 +1,49 @@
+.notification-form {
+  max-width: 552px;
+  margin: auto;
+  padding-bottom: 12px;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-toolbar {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+
+  .notification-form__radio-selector {
+    align-items: center;
+
+    > :last-child {
+      margin-left: 20px;
+      margin-top: 0px;
+    }
+  }
+
+  .notification-form__delivery-selector {
+    margin-top: 6px;
+  }
+
+  .notification-form__select {
+    padding-top: 54px;
+  }
+
+  .notification-form__daily-number {
+    margin-top: 50px;
+  }
+
+  .recurring-switch-group {
+    .switch__button {
+      margin-top: 16px;
+      margin-left: 10px;
+    }
+
+    .switch__knob-background {
+      z-index: 10;
+    }
+  }
+}

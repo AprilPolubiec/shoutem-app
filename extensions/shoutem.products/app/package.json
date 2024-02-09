@@ -1,0 +1,10 @@
+{
+  "name": "shoutem.products",
+  "version": "5.3.0-build1666705991434",
+  "description": "List of products with purchase link.",
+  "peerDependencies": {
+    "@shoutem/redux-io": "*",
+    "@shoutem/theme": "*",
+    "@shoutem/ui": "*"
+  }
+}

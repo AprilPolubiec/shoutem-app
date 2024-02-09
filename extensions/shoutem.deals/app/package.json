@@ -1,0 +1,18 @@
+{
+  "name": "shoutem.deals",
+  "version": "6.3.1-build1671194804542",
+  "description": "Create special deals and redeem them with coupons",
+  "dependencies": {
+    "currency-formatter": "1.5.9",
+    "numeral": "2.0.6",
+    "react-native-localize": "2.2.2"
+  },
+  "peerDependencies": {
+    "@shoutem/redux-io": "*",
+    "@shoutem/theme": "*",
+    "@shoutem/ui": "*"
+  },
+  "nativeDependencies": [
+    "react-native-localize"
+  ]
+}

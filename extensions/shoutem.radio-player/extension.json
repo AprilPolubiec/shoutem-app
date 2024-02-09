@@ -1,0 +1,132 @@
+{
+  "name": "radio-player",
+  "title": "Radio+",
+  "version": "8.1.1",
+  "platform": ">=9",
+  "description": "Show full multimedia potential of your app radio streams by displaying “now playing” metadata such as song name, artist name, album artwork…",
+  "releaseNotes": "* Resolved issue when ad banner isn't defined",
+  "nativeChanges": {
+    "lastVersion": "6.0.1"
+  },
+  "icon": "server/assets/add-radio-image.png",
+  "categories": ["media"],
+  "dependencies": [
+    "shoutem.audio",
+    "shoutem.i18n",
+    "shoutem.navigation",
+    "shoutem.layouts",
+    "shoutem.redux",
+    "shoutem.rss",
+    "shoutem.rss-news"
+  ],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "screens": [
+    {
+      "name": "Radio",
+      "title": "Radio with chosen static background image",
+      "image": "./server/assets/layouts/static-background-image-radio.png",
+      "settings": {
+        "hasCustomAdRenderer": true,
+        "canToggleArtwork": true,
+        "canUseBackgroundImage": true,
+        "canHaveRssFeed": false,
+        "canShowStreamTitle": false
+      }
+    },
+    {
+      "name": "ArtworkRadioScreen",
+      "title": "Radio with dynamic artwork background image",
+      "image": "./server/assets/layouts/dynamic-artwork-background-image-radio.png",
+      "extends": "@.Radio",
+      "settings": {
+        "hasCustomAdRenderer": true,
+        "canToggleArtwork": false,
+        "canUseBackgroundImage": false,
+        "canHaveRssFeed": false,
+        "canShowStreamTitle": true
+      }
+    },
+    {
+      "name": "RadioRssScreen",
+      "title": "Radio with RSS news feed",
+      "settings": {
+        "hasCustomAdRenderer": true,
+        "canToggleArtwork": true,
+        "canUseBackgroundImage": true,
+        "canHaveRssFeed": true,
+        "canShowStreamTitle": false
+      }
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Radio",
+      "title": "Radio+",
+      "description": "Shortcut for radio stream player with 'now playing' metadata",
+      "screen": "@.Radio",
+      "icon": "theme://play.png",
+      "adminPages": [
+        {
+          "page": "@.RadioShortcutPage",
+          "title": "RADIO SETTINGS"
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "streamTitle": "",
+        "streamUrl": "",
+        "backgroundImageUrl": "",
+        "showSharing": false
+      }
+    },
+    {
+      "name": "RadioRssScreen",
+      "title": "Radio with RSS news feed",
+      "description": "Shortcut that combines radio stream player and RSS news feed ",
+      "screen": "@.RadioRssScreen",
+      "icon": "theme://play.png",
+      "adminPages": [
+        {
+          "page": "@.RadioShortcutPage",
+          "title": "RADIO SETTINGS"
+        }
+      ],
+      "settings": {
+        "streamTitle": "",
+        "streamUrl": "",
+        "feedUrl": "",
+        "backgroundImageUrl": "",
+        "showSharing": false,
+        "hasRssFeed": true
+      }
+    }
+  ],
+  "pages": [
+    {
+      "name": "RadioShortcutPage",
+      "type": "react-page"
+    }
+  ],
+  "settingsPages": [
+    {
+      "page": "shoutem.theme.ExtensionThemeSettingsPage",
+      "title": "Settings",
+      "categories": ["style"],
+      "parameters": {
+        "extensionTheme": "Theme"
+      }
+    }
+  ],
+  "extensionThemes": [
+    {
+      "name": "Theme",
+      "path": "server/themes/theme.json"
+    }
+  ]
+}

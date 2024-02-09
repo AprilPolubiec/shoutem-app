@@ -1,0 +1,10 @@
+{
+  "name": "shoutem.rss-videos",
+  "version": "5.2.0-build1666706014859",
+  "description": "RSS Videos",
+  "peerDependencies": {
+    "@shoutem/redux-io": "*",
+    "@shoutem/theme": "*",
+    "@shoutem/ui": "*"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "shoutem.theme",
+  "version": "7.0.2-build1704367252927",
+  "dependencies": {
+    "@shoutem/theme": "0.13.1",
+    "@shoutem/ui": "~6.4.0"
+  },
+  "peerDependencies": {
+    "@shoutem/redux-io": "*",
+    "react-native-svg-transformer": "*"
+  },
+  "nativeDependencies": [
+    "@shoutem/ui"
+  ],
+  "assets": [
+    "./node_modules/@shoutem/ui/fonts/rubicon-icon-font.ttf",
+    "./node_modules/@shoutem/ui/fonts/Rubik-Black.ttf",
+    "./node_modules/@shoutem/ui/fonts/Rubik-BlackItalic.ttf",
+    "./node_modules/@shoutem/ui/fonts/Rubik-Bold.ttf",
+    "./node_modules/@shoutem/ui/fonts/Rubik-BoldItalic.ttf",
+    "./node_modules/@shoutem/ui/fonts/Rubik-Italic.ttf",
+    "./node_modules/@shoutem/ui/fonts/Rubik-Light.ttf",
+    "./node_modules/@shoutem/ui/fonts/Rubik-LightItalic.ttf",
+    "./node_modules/@shoutem/ui/fonts/Rubik-Medium.ttf",
+    "./node_modules/@shoutem/ui/fonts/Rubik-MediumItalic.ttf",
+    "./node_modules/@shoutem/ui/fonts/Rubik-Regular.ttf"
+  ]
+}

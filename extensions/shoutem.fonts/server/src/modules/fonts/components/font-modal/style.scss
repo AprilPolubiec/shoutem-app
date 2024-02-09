@@ -1,0 +1,40 @@
+.font-modal {
+  .modal-title-container {
+    display: flex;
+  }
+
+  .modal-title {
+    margin-top: 7px;
+    padding-left: 10px;
+  }
+
+  .file-uploader {
+    height: 75px;
+  }
+
+  .btn-toolbar {
+    padding-top: 35px;
+    padding-bottom: 15px;
+    background-color: white;
+  }
+
+  .file-uploader {
+    background-color: white;
+  }
+
+  .font-form {
+    max-width: 552px;
+    margin: auto;
+    padding-bottom: 12px;
+
+    .form-group-title-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .font-icon-info {
+      padding-top: 14px;
+      padding-left: 5px;
+    }
+  }
+}

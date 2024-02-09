@@ -1,0 +1,67 @@
+{
+  "name": "rss-videos",
+  "title": "Videos RSS",
+  "version": "5.2.0",
+  "platform": ">=12.1.0",
+  "description": "Show a video gallery from an RSS feed",
+  "releaseNotes": "No user facing changes\n* Support for more accurate analytics when opening item details screen.",
+  "icon": "server/assets/add-videos-image.png",
+  "categories": ["media"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "dependencies": [
+    "shoutem.application",
+    "shoutem.firebase",
+    "shoutem.i18n",
+    "shoutem.layouts",
+    "shoutem.navigation",
+    "shoutem.push-notifications",
+    "shoutem.rss"
+  ],
+  "shortcuts": [
+    {
+      "name": "videos-shortcut",
+      "title": "Videos RSS",
+      "screen": "@.VideosList",
+      "icon": "theme://play.png",
+      "capabilities": ["shoutem.rss.feed"],
+      "adminPages": [
+        {
+          "page": "shoutem.rss.RssPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "shoutem.proxy.videos"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "Videos RSS",
+        "extensionTitle": "Videos RSS",
+        "feedType": "Video"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "VideosList",
+      "title": "Big list",
+      "image": "server/assets/screens/big-list.png"
+    },
+    {
+      "name": "VideosSmallList",
+      "title": "Small list",
+      "image": "server/assets/screens/small-list.png",
+      "extends": "@.VideosList"
+    },
+    {
+      "name": "VideoDetails",
+      "settings": { "disableAdBanner": true }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "shoutem.push-notifications",
+  "version": "4.0.5-build1693584946331",
+  "description": "Base extension for push notifications",
+  "scripts": {
+    "prebuild": "node -e 'require(\"./build\").runPreBuild()'"
+  },
+  "dependencies": {
+    "xcode": "3.0.1"
+  }
+}

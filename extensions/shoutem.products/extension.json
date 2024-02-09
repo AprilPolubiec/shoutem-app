@@ -1,0 +1,96 @@
+{
+  "name": "products",
+  "version": "5.3.0",
+  "platform": ">=12.1.0",
+  "title": "Products",
+  "description": "Show products with purchase link",
+  "releaseNotes": "No user facing changes\n* Support for more accurate analytics when opening item details screen.",
+  "categories": ["commerce"],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "icon": "server/assets/add-products-image.png",
+  "dependencies": [
+    "shoutem.cms",
+    "shoutem.i18n",
+    "shoutem.layouts",
+    "shoutem.navigation",
+    "shoutem.web-view"
+  ],
+  "shortcuts": [
+    {
+      "name": "openProductsList",
+      "title": "Products",
+      "screen": "@.ProductsList",
+      "icon": "theme://cart.png",
+      "capabilities": [
+        "shoutem.cms.search",
+        "shoutem.cms.import-csv",
+        "shoutem.cms.export-csv"
+      ],
+      "adminPages": [
+        {
+          "page": "shoutem.cms.CmsPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "@.Products"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        },
+        {
+          "page": "@.BuyLinkHeaderPage",
+          "title": "Buy link header"
+        }
+      ],
+      "settings": {
+        "addAuthHeaderToBuyLink": false,
+        "defaultShortcutTitle": "Products",
+        "extensionTitle": "Products"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "ProductsList",
+      "title": "Compact list",
+      "image": "./server/assets/screens/compact-list.png",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "compact-list",
+        "hasFeaturedItem": false,
+        "categoryPickerTypeOptions": ["dropdown", "navBarDropdown", "horizontalList"],
+        "categoryPickerType": "dropdown"
+      },
+      "groupTitle": "Choose list layout",
+      "navigatesTo": ["@.ProductDetails"]
+    },
+    {
+      "name": "ProductDetails",
+      "title": "Large photo clear navbar details",
+      "groupTitle": "Choose product details layout",
+      "image": "./server/assets/screens/large-photo-details.png"
+    }
+  ],
+  "dataSchemas": [
+    {
+      "name": "Products",
+      "path": "./server/data-schemas/Products.json"
+    }
+  ],
+  "pages": [
+    {
+      "name": "BuyLinkHeaderPage",
+      "type": "react-page"
+    }
+  ]
+}

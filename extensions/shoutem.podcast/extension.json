@@ -1,0 +1,164 @@
+{
+  "name": "podcast",
+  "version": "6.1.0",
+  "platform": ">=12.1.0",
+  "title": "Podcast RSS",
+  "description": "Show podcast episodes from an RSS feed",
+  "releaseNotes": "* Users will enjoy a seamless experience with our new lead image fallback, ensuring visual appeal even when episode images are missing\n* Fixed the favorite button to accurately reflect user choices, making it easier to add or remove episodes from your favorites",
+  "nativeChanges": {
+    "lastVersion": "6.0.0"
+  },
+  "icon": "server/assets/extension-icon.png",
+  "categories": [
+    "media"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "dependencies": [
+    "shoutem.application",
+    "shoutem.audio",
+    "shoutem.firebase",
+    "shoutem.i18n",
+    "shoutem.layouts",
+    "shoutem.navigation",
+    "shoutem.permissions",
+    "shoutem.push-notifications",
+    "shoutem.rss"
+  ],
+  "shortcuts": [
+    {
+      "name": "podcast-shortcut",
+      "title": "Podcast RSS",
+      "icon": "theme://podcasts.png",
+      "screen": "@.EpisodesListScreen",
+      "capabilities": [
+        "shoutem.rss.feed"
+      ],
+      "adminPages": [
+        {
+          "page": "shoutem.rss.RssPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "shoutem.proxy.news"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        },
+        {
+          "page": "@.DownloadPage",
+          "title": "Download",
+          "settings": {
+            "enableDownload": false
+          }
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "Podcast RSS",
+        "extensionTitle": "Podcast RSS",
+        "feedType": "Podcast"
+      }
+    },
+    {
+      "name": "MyPodcastsScreen",
+      "title": "Favorite podcasts",
+      "icon": "theme://podcasts.png",
+      "screen": "@.MyPodcastsScreen"
+    }
+  ],
+  "screens": [
+    {
+      "name": "EpisodesListScreen",
+      "title": "List",
+      "image": "./server/assets/screens/list.png",
+      "navigatesTo": [
+        "@.EpisodeDetailsScreen"
+      ],
+      "settings": {
+        "listType": "list",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "EpisodesFeaturedListScreen",
+      "title": "List with a featured episode",
+      "image": "./server/assets/screens/featuredlist.png",
+      "extends": "@.EpisodesListScreen",
+      "settings": {
+        "listType": "list",
+        "hasFeaturedItem": true
+      }
+    },
+    {
+      "name": "EpisodesGridScreen",
+      "title": "Grid",
+      "image": "./server/assets/screens/grid.png",
+      "extends": "@.EpisodesListScreen",
+      "settings": {
+        "listType": "fixed-grid",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "EpisodesLargeGridScreen",
+      "title": "Large grid",
+      "image": "./server/assets/screens/large-grid.png",
+      "extends": "@.EpisodesListScreen",
+      "settings": {
+        "listType": "large-fixed-grid",
+        "hasFeaturedItem": false
+      }
+    },
+    {
+      "name": "EpisodesFeaturedGridScreen",
+      "title": "Grid with a featured episode",
+      "image": "./server/assets/screens/featuredgrid.png",
+      "extends": "@.EpisodesListScreen",
+      "settings": {
+        "listType": "fixed-grid",
+        "hasFeaturedItem": true
+      }
+    },
+    {
+      "name": "EpisodesFeaturedLargeGridScreen",
+      "title": "Large grid with a featured episode",
+      "image": "./server/assets/screens/featuredlargegrid.png",
+      "extends": "@.EpisodesListScreen",
+      "settings": {
+        "listType": "large-fixed-grid",
+        "hasFeaturedItem": true
+      }
+    },
+    {
+      "name": "EpisodeDetailsScreen",
+      "title": "Episode details",
+      "image": "./server/assets/screens/large-details.png",
+      "settings": {
+        "enableSharing": true
+      }
+    },
+    {
+      "name": "EpisodeDetailsWithoutShareScreen",
+      "title": "Episode details without share button",
+      "image": "./server/assets/screens/large-details-no-share.png",
+      "extends": "@.EpisodeDetailsScreen",
+      "settings": {
+        "enableSharing": false
+      }
+    },
+    {
+      "name": "MyPodcastsScreen",
+      "title": "List",
+      "image": "./server/assets/screens/list.png"
+    }
+  ],
+  "pages": [
+    {
+      "name": "DownloadPage",
+      "type": "react-page"
+    }
+  ]
+}

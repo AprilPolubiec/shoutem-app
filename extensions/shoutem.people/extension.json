@@ -1,0 +1,80 @@
+{
+  "name": "people",
+  "title": "People",
+  "version": "5.2.0",
+  "platform": ">=12.1.0",
+  "icon": "./server/assets/images/add-people-image.png",
+  "description": "Show people and contact details",
+  "releaseNotes": "No user facing changes\n* Support for more accurate analytics when opening item details screen.",
+  "dependencies": [
+    "shoutem.cms",
+    "shoutem.i18n",
+    "shoutem.layouts",
+    "shoutem.navigation",
+    "shoutem.web-view"
+  ],
+  "categories": ["content"],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "shortcuts": [
+    {
+      "title": "People",
+      "icon": "theme://members.png",
+      "name": "openPeopleListScreen",
+      "screen": "@.PeopleListScreen",
+      "capabilities": ["shoutem.cms.search", "shoutem.cms.import-csv"],
+      "adminPages": [
+        {
+          "page": "shoutem.cms.CmsPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "@.People"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "People",
+        "extensionTitle": "People"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "PeopleListScreen",
+      "title": "Compact list",
+      "image": "./server/assets/screens/compact-list.png",
+      "navigatesTo": ["@.PeopleDetailsScreen"],
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "compact-list",
+        "hasFeaturedItem": false,
+        "categoryPickerTypeOptions": ["dropdown", "navBarDropdown", "horizontalList"],
+        "categoryPickerType": "dropdown"
+      }
+    },
+    {
+      "name": "PeopleDetailsScreen",
+      "title": "Large square photo with transparent navbar",
+      "image": "./server/assets/screens/large-square-photo-clear-navbar-details.png",
+      "settings": { "disableAdBanner": true }
+    }
+  ],
+  "dataSchemas": [
+    {
+      "name": "People",
+      "path": "server/data-schemas/People.json"
+    }
+  ]
+}

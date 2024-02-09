@@ -1,0 +1,319 @@
+{
+  "name": "news",
+  "version": "6.3.0",
+  "platform": ">=12.1.0",
+  "title": "News",
+  "description": "Show news articles",
+  "releaseNotes": "* Added support for disabling uppercasing of titles in layouts that currently do so\n* Update CMS extension to add checkbox for this setting in Layout settings page",
+  "icon": "server/assets/add-news-image.png",
+  "dependencies": [
+    "shoutem.cms",
+    "shoutem.i18n",
+    "shoutem.layouts",
+    "shoutem.navigation",
+    "shoutem.theme"
+  ],
+  "categories": ["content"],
+  "i18n": {
+    "locale": "en",
+    "translationPath": "server/translations/en.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoutem/extensions"
+  },
+  "shortcuts": [
+    {
+      "name": "news-shortcut",
+      "title": "News",
+      "icon": "theme://news.png",
+      "screen": "@.ArticlesScreen",
+      "capabilities": [
+        "shoutem.cms.search",
+        "shoutem.cms.import-csv",
+        "shoutem.cms.import-rss"
+      ],
+      "adminPages": [
+        {
+          "page": "shoutem.cms.CmsPage",
+          "title": "Content",
+          "parameters": {
+            "schema": "@.articles"
+          }
+        },
+        {
+          "page": "shoutem.layouts.LayoutPage",
+          "title": "Layout"
+        }
+      ],
+      "settings": {
+        "defaultShortcutTitle": "News",
+        "extensionTitle": "News"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "ArticlesScreen",
+      "title": "Fixed grid with a featured item",
+      "image": "./server/assets/screens/grid.png",
+      "navigatesTo": ["@.ArticleDetailsScreen"],
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "fixed-grid",
+        "hasFeaturedItem": true,
+        "canHideModificationTimestamp": true,
+        "canDisableUppercasing": true,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      }
+    },
+    {
+      "name": "FixedGridArticlesScreen",
+      "title": "Fixed grid",
+      "image": "./server/assets/screens/fixed-grid.png",
+      "extends": "@.ArticlesScreen",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "fixed-grid",
+        "hasFeaturedItem": false,
+        "canHideModificationTimestamp": true,
+        "canDisableUppercasing": true,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      }
+    },
+    {
+      "name": "CompactListArticlesScreen",
+      "title": "Compact list",
+      "image": "./server/assets/screens/list.png",
+      "extends": "@.ArticlesScreen",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "compact-list",
+        "hasFeaturedItem": false,
+        "canHideModificationTimestamp": true,
+        "canDisableUppercasing": true,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      }
+    },
+    {
+      "name": "FeaturedCompactListArticlesScreen",
+      "title": "Compact list with a featured item",
+      "image": "./server/assets/screens/featuredlist.png",
+      "extends": "@.ArticlesScreen",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "compact-list",
+        "hasFeaturedItem": true,
+        "canHideModificationTimestamp": true,
+        "canDisableUppercasing": true,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      }
+    },
+    {
+      "name": "LargeListArticlesScreen",
+      "title": "Large list",
+      "image": "./server/assets/screens/large-list.png",
+      "extends": "@.ArticlesScreen",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "large-list",
+        "hasFeaturedItem": false,
+        "canHideModificationTimestamp": true,
+        "canDisableUppercasing": true,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      }
+    },
+    {
+      "name": "MediumListArticlesScreen",
+      "title": "Medium list",
+      "image": "./server/assets/screens/medium-list.png",
+      "extends": "@.ArticlesScreen",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "medium-list",
+        "hasFeaturedItem": false,
+        "canHideModificationTimestamp": true,
+        "canDisableUppercasing": true,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      }
+    },
+    {
+      "name": "FeaturedMediumListArticlesScreen",
+      "title": "Medium list with a featured item",
+      "image": "./server/assets/screens/medium-list-with-featured.png",
+      "extends": "@.ArticlesScreen",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "medium-list",
+        "hasFeaturedItem": true,
+        "canHideModificationTimestamp": true,
+        "canDisableUppercasing": true,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      }
+    },
+    {
+      "name": "TileListArticlesScreen",
+      "title": "Tile list",
+      "image": "./server/assets/screens/tile-list.png",
+      "extends": "@.ArticlesScreen",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "tile-list",
+        "hasFeaturedItem": false,
+        "canHideModificationTimestamp": true,
+        "canDisableUppercasing": true,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      }
+    },
+    {
+      "name": "ArticleDetailsScreen",
+      "title": "Large photo with transparent navbar",
+      "image": "./server/assets/screens/large-photo-clear-navbar-details.png",
+      "settings": {
+        "navigationBarStyle": "clear",
+        "disableAdBanner": true
+      }
+    },
+    {
+      "name": "SolidNavbarMediumArticleDetailsScreen",
+      "title": "Medium photo with solid navbar",
+      "image": "./server/assets/screens/medium-photo-solid-navbar-details.png",
+      "extends": "@.ArticleDetailsScreen",
+      "settings": {
+        "navigationBarStyle": "solid"
+      }
+    },
+    {
+      "name": "SolidNavbarMediumArticleDetailsNoDateScreen",
+      "title": "Medium photo with solid navbar without the date",
+      "image": "./server/assets/screens/medium-photo-solid-navbar-details-no-date.png",
+      "extends": "@.ArticleDetailsScreen",
+      "settings": {
+        "navigationBarStyle": "solid"
+      }
+    },
+    {
+      "name": "SolidNavbarLargeArticleDetailsScreen",
+      "title": "Large photo with solid navbar",
+      "image": "./server/assets/screens/large-photo-solid-navbar-details.png",
+      "extends": "@.ArticleDetailsScreen",
+      "settings": {
+        "navigationBarStyle": "solid"
+      }
+    },
+    {
+      "name": "ClearNavbarMediumArticleDetailsScreen",
+      "title": "Medium photo with transparent navbar",
+      "image": "./server/assets/screens/medium-photo-clear-navbar-details.png",
+      "extends": "@.ArticleDetailsScreen",
+      "settings": {
+        "navigationBarStyle": "clear",
+        "disableAdBanner": true
+      }
+    },
+    {
+      "name": "FeaturedGrid122ArticlesScreen",
+      "title": "1-2-2 pattern grid with a featured item",
+      "image": "./server/assets/screens/1-2-2-grid-with-featured.png",
+      "extends": "@.ArticlesScreen",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "1-2-2-grid",
+        "hasFeaturedItem": true,
+        "canDisableUppercasing": true,
+        "canHideModificationTimestamp": true,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      }
+    },
+    {
+      "name": "Grid122ArticlesScreen",
+      "title": "1-2-2 pattern grid",
+      "image": "./server/assets/screens/1-2-2-grid.png",
+      "extends": "@.ArticlesScreen",
+      "settingsPage": {
+        "page": "shoutem.cms.LayoutSettingsPage"
+      },
+      "settings": {
+        "listType": "1-2-2-grid",
+        "hasFeaturedItem": false,
+        "canDisableUppercasing": true,
+        "canHideModificationTimestamp": true,
+        "categoryPickerTypeOptions": [
+          "dropdown",
+          "navBarDropdown",
+          "horizontalList"
+        ],
+        "categoryPickerType": "dropdown"
+      }
+    }
+  ],
+  "dataSchemas": [
+    {
+      "name": "articles",
+      "path": "./server/data-schemas/articles.json"
+    }
+  ]
+}

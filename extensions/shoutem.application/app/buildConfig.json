@@ -1,0 +1,31 @@
+{
+  "appId": "300303",
+  "serverApiEndpoint": "apps.api.shoutem.com",
+  "legacyApiEndpoint": "v4.api.shoutem.com",
+  "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2YTQyM2RlMC1iYWU0LTExZWUtOTkwNy0yOWI1MjcwYWZmYWYiLCJzdWIiOiJhcHBsaWNhdGlvbjozMDAzMDMiLCJybG0iOiJhcHAtYnVpbGRlciIsImFjbCI6W3sicmVzb3VyY2UiOiJzaG91dGVtLmNvcmUuYXBwbGljYXRpb25zIiwiYWN0aW9ucyI6WyJhY2Nlc3MiLCJyZWFkIl0sImNvbmRpdGlvbiI6eyJpZCI6IjMwMDMwMyJ9fSx7InJlc291cmNlIjoic2hvdXRlbS5jb3JlLmNvbmZpZ3VyYXRpb25zIiwiYWN0aW9ucyI6WyJyZWFkIl19LHsicmVzb3VyY2UiOiJzaG91dGVtLmNvcmUuYXBwLXB1Ymxpc2gtc2V0dGluZ3MiLCJhY3Rpb25zIjpbInJlYWQiXX0seyJyZXNvdXJjZSI6InNob3V0ZW0uY29yZS50aGVtZXMiLCJhY3Rpb25zIjpbInJlYWQiXX1dLCJ2c2kiOnsidHlwIjoidiIsInYiOjF9LCJpYXQiOjE3MDYxMjAwNjksImlzcyI6InNob3V0ZW0ifQ.gHAKhpPEp1QxkOQOETqbRcXROrp4o9YGLMn4T4Txh_M",
+  "production": false,
+  "offlineMode": false,
+  "debug": true,
+  "release": false,
+  "sanitizeGitDiff": false,
+  "configurationFilePath": "config.json",
+  "workingDirectories": [],
+  "linkedExtensions": [
+    "./extensions/*"
+  ],
+  "linkedPackages": [
+    "./packages/*"
+  ],
+  "excludePackages": [],
+  "extensionsJsPath": "./extensions.js",
+  "baseAppId": 2470,
+  "cacheFolder": "./cached-bundles",
+  "bundleIdPrefix": "",
+  "iosBundleId": "",
+  "androidApplicationId": "",
+  "cacheBaseApp": false,
+  "binaryVersionName": null,
+  "binaryVersionCode": null,
+  "skipNativeDependencies": false,
+  "skipPreBuildActions": false
+}
